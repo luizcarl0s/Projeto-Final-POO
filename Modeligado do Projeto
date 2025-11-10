@@ -9,6 +9,10 @@ aggregates ServicoComunitario
 - emprestimos: ArrayList<Emprestimo>
 - servicos: ArrayList<ServicoComunitario>
 ---
++ SistemaBiblioteca()
++ adicionarItem(): void
++ cadastrarUsuario(): void
++ cadastrarServico(): void
 ---
 Item
 implements Emprestavel Interface
