@@ -1,0 +1,111 @@
+SistemaBiblioteca
+aggregates Item
+aggregates Usuario
+aggregates Emprestimos
+aggregates ServicosComunitarios
+---
+- item: ArrayList<Item>
+- usuario: ArrayList<Usuario>
+- emprestimos: ArrayList<Emprestimos>
+---
+---
+Item
+---
+- nome: str
+- codigo: int
+- disponivel: boolean
+---
++ Item()
++ getNome():str
++ getCodigo(): int
++ getDisponivel(): boolean
++ setDisponivel(disponivel: boolean): void
++ exibirInformacoes(): str
+---
+Livro 
+extends Item
+---
+- autor: str
+- dataLancamento: str
+- codigoLivro: int
+---
++ Livro()
++ exibirInformacoes(): str
+---
+Revista
+extends Item
+---
+- edicao: str
+- mes: str
+---
++ Revista()
++ exibirInformacoes(): str
+---
+Brinquedos
+extends Item
+---
+- material: str
+- faixaEtaria: int
+---
++ Brinquedos()
++ exibirInformacoes(): str
+---
+Usuario
+---
+- cpf: int
+- nome: str
+- contato: str
+---
++ Usuario()
+---
+Voluntario
+extends Usuario
+---
+- perfil: str
+---
++ Voluntario()
+---
+Gerente
+extends Usuario
+---
+- setorResponsavel: str
+---
++ Gerente()
++ gerarRelatorio(): void
++ cadastrarVoluntario(): boolean
+---
+Emprestimos
+implements Emprestavel Interface
+association Item
+association Usuario
+---
+- item: Item
+- usuario: Usuario
+- dataSaida: str
+- dataDevolucao: str
+---
++ Emprestimos()
++ registrarEmprestimo(): boolean
++ estarPendente(): boolean
+---
+ServicosComunitarios
+---
+- id: int
+- nome: str
+- descricao: str
+- responsavel: Usuario
+- participantes: ArrayList<Usuario>
+- vagas: int
+- horario: str
+---
++ ServicosComunitarios()
++ adicionarParticipante(): boolean
++ removerParticipante(): boolean
++ listarParticipantes(): str
+---
+Emprestavel Interface
+---
+---
++ emprestar(): void
++ devolver(): void
+---
