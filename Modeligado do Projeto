@@ -1,7 +1,7 @@
 SistemaBiblioteca
 aggregates Item
 aggregates Usuario
-aggregates Emprestimos
+aggregates Emprestimo
 aggregates ServicoComunitario
 ---
 - itens: ArrayList<Item>
