@@ -60,11 +60,19 @@ extends Item
 + devolver(): void
 + exibirInformacoes(): String
 ---
+Emprestavel Interface
+---
+---
++ emprestar(): void
++ devolver(): void
+---
 Usuario
+association Historico
 ---
 - cpf: String
 - nome: String
 - contato: String
+- historico: Historico
 ---
 + Usuario()
 ---
@@ -83,6 +91,12 @@ extends Usuario
 + Gerente()
 + gerarRelatorio(): void
 + cadastrarVoluntario(): boolean
+---
+Historico
+---
+- emprestimos: ArrayList<Emprestimo>
+- servicosPartipados: ArrayList<ServicoComunitario>
+---
 ---
 Emprestimo
 association Item
@@ -113,10 +127,4 @@ ServicoComunitario
 + adicionarParticipante(): boolean
 + removerParticipante(): boolean
 + listarParticipantes(): String
----
-Emprestavel Interface
----
----
-+ emprestar(): void
-+ devolver(): void
 ---
