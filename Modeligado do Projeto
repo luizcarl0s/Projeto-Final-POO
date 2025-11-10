@@ -4,104 +4,104 @@ aggregates Usuario
 aggregates Emprestimos
 aggregates ServicosComunitarios
 ---
-- item: ArrayList<Item>
-- usuario: ArrayList<Usuario>
-- emprestimos: ArrayList<Emprestimos>
+- itens: ArrayList<Item>
+- usuarios: ArrayList<Usuario>
+- emprestimos: ArrayList<Emprestimo>
 ---
 ---
 Item
+implements Emprestavel Interface
 ---
-- nome: str
+- nome: String
 - codigo: int
 - disponivel: boolean
 ---
 + Item()
-+ getNome():str
++ getNome():String
 + getCodigo(): int
 + getDisponivel(): boolean
 + setDisponivel(disponivel: boolean): void
-+ exibirInformacoes(): str
++ exibirInformacoes(): String
 ---
 Livro 
 extends Item
 ---
-- autor: str
-- dataLancamento: str
+- autor: String
+- dataLancamento: String
 - codigoLivro: int
 ---
 + Livro()
-+ exibirInformacoes(): str
++ exibirInformacoes(): String
 ---
 Revista
 extends Item
 ---
-- edicao: str
-- mes: str
+- edicao: String
+- mes: String
 ---
 + Revista()
-+ exibirInformacoes(): str
++ exibirInformacoes(): String
 ---
 Brinquedos
 extends Item
 ---
-- material: str
+- material: String
 - faixaEtaria: int
 ---
 + Brinquedos()
-+ exibirInformacoes(): str
++ exibirInformacoes(): String
 ---
 Usuario
 ---
 - cpf: int
-- nome: str
-- contato: str
+- nome: String
+- contato: String
 ---
 + Usuario()
 ---
 Voluntario
 extends Usuario
 ---
-- perfil: str
+- perfil: String
 ---
 + Voluntario()
 ---
 Gerente
 extends Usuario
 ---
-- setorResponsavel: str
+- setorResponsavel: String
 ---
 + Gerente()
 + gerarRelatorio(): void
 + cadastrarVoluntario(): boolean
 ---
-Emprestimos
-implements Emprestavel Interface
+Emprestimo
 association Item
 association Usuario
 ---
 - item: Item
 - usuario: Usuario
-- dataSaida: str
-- dataDevolucao: str
+- dataSaida: String
+- dataDevolucao: String
 ---
-+ Emprestimos()
-+ registrarEmprestimo(): boolean
++ Emprestimo()
++ registrar(): boolean
 + estarPendente(): boolean
 ---
 ServicosComunitarios
 ---
 - id: int
-- nome: str
-- descricao: str
+- nome: String
+- descricao: String
 - responsavel: Usuario
 - participantes: ArrayList<Usuario>
 - vagas: int
-- horario: str
+- horario: String
 ---
 + ServicosComunitarios()
 + adicionarParticipante(): boolean
 + removerParticipante(): boolean
-+ listarParticipantes(): str
++ listarParticipantes(): String
 ---
 Emprestavel Interface
 ---
