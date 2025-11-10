@@ -92,10 +92,12 @@ association Usuario
 - usuario: Usuario
 - dataSaida: String
 - dataDevolucao: String
+- valorMultaPorDia: double
 ---
 + Emprestimo()
 + registrar(): void
 + estaPendente(): boolean
++ calcularMulta(): int
 ---
 ServicoComunitario
 ---
