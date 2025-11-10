@@ -38,8 +38,6 @@ extends Item
 - isbn: String
 ---
 + Livro()
-+ emprestar(): void
-+ devolver(): void
 + exibirInformacoes(): String
 ---
 Revista
@@ -49,8 +47,6 @@ extends Item
 - mes: String
 ---
 + Revista()
-+ emprestar(): void
-+ devolver(): void
 + exibirInformacoes(): String
 ---
 Brinquedo
@@ -60,8 +56,6 @@ extends Item
 - faixaEtaria: int
 ---
 + Brinquedo()
-+ emprestar(): void
-+ devolver(): void
 + exibirInformacoes(): String
 ---
 Emprestavel Interface
