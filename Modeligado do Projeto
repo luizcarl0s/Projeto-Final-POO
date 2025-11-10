@@ -2,11 +2,12 @@ SistemaBiblioteca
 aggregates Item
 aggregates Usuario
 aggregates Emprestimos
-aggregates ServicosComunitarios
+aggregates ServicoComunitario
 ---
 - itens: ArrayList<Item>
 - usuarios: ArrayList<Usuario>
 - emprestimos: ArrayList<Emprestimo>
+- servicos: ArrayList<ServicoComunitario>
 ---
 ---
 Item
@@ -21,6 +22,8 @@ implements Emprestavel Interface
 + getCodigo(): int
 + getDisponivel(): boolean
 + setDisponivel(disponivel: boolean): void
++ emprestar(): void
++ devolver(): void
 + exibirInformacoes(): String
 ---
 Livro 
@@ -28,9 +31,11 @@ extends Item
 ---
 - autor: String
 - dataLancamento: String
-- codigoLivro: int
+- isbn: String
 ---
 + Livro()
++ emprestar(): void
++ devolver(): void
 + exibirInformacoes(): String
 ---
 Revista
@@ -40,20 +45,24 @@ extends Item
 - mes: String
 ---
 + Revista()
++ emprestar(): void
++ devolver(): void
 + exibirInformacoes(): String
 ---
-Brinquedos
+Brinquedo
 extends Item
 ---
 - material: String
 - faixaEtaria: int
 ---
-+ Brinquedos()
++ Brinquedo()
++ emprestar(): void
++ devolver(): void
 + exibirInformacoes(): String
 ---
 Usuario
 ---
-- cpf: int
+- cpf: String
 - nome: String
 - contato: String
 ---
@@ -85,10 +94,10 @@ association Usuario
 - dataDevolucao: String
 ---
 + Emprestimo()
-+ registrar(): boolean
-+ estarPendente(): boolean
++ registrar(): void
++ estaPendente(): boolean
 ---
-ServicosComunitarios
+ServicoComunitario
 ---
 - id: int
 - nome: String
@@ -98,7 +107,7 @@ ServicosComunitarios
 - vagas: int
 - horario: String
 ---
-+ ServicosComunitarios()
++ ServicoComunitario()
 + adicionarParticipante(): boolean
 + removerParticipante(): boolean
 + listarParticipantes(): String
