@@ -1,4 +1,4 @@
-SistemaBiblioteca
+SistemaBiblioteca //Classe do sistema
 aggregates Item
 aggregates Usuario
 aggregates Emprestimo
@@ -14,8 +14,8 @@ aggregates ServicoComunitario
 + cadastrarUsuario(): void
 + cadastrarServico(): void
 ---
-Item
-implements Emprestavel Interface
+Item //Classe abstrata
+implements Emprestavel
 ---
 - nome: String
 - codigo: int
@@ -28,7 +28,7 @@ implements Emprestavel Interface
 + setDisponivel(disponivel: boolean): void
 + emprestar(): void
 + devolver(): void
-+ exibirInformacoes(): String
++ exibirInformacoes(): String //método abstrato
 ---
 Livro 
 extends Item
@@ -56,15 +56,15 @@ extends Item
 - faixaEtaria: int
 ---
 + Brinquedo()
-+ exibirInformacoes(): String
++ exibirInformacoes(): String 
 ---
-Emprestavel Interface
+Emprestavel //Interface
 ---
 ---
 + emprestar(): void
 + devolver(): void
 ---
-Usuario
+Usuario //Classe mãe
 association Historico
 ---
 - cpf: String
